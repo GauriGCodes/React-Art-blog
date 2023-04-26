@@ -1,0 +1,42 @@
+<blog>
+	<post>
+		<date>April 24, 2023</date>
+		<author>Lindsay Chan</author>
+		<title>“Nowhere to Now” by Artist Tom DesLongchamp</title>
+		<summary>
+			<image_path>painting_1.jpg</image_path>
+			<text>Seattle-based artist Tom DesLongchamp turns 8 years of portrait-making into an intimate art book. </text>
+		</summary>
+		<body>“Nowhere to Now” charts Tom evolution from doodling during breaks at work to full-time devotion. The intro and section titles share details about Tom’s approach to creativity in general, but also include specific information about his unique ink/fingerprint/masking technique. The book offers an intimate view of the intricate textures and colourful layering that make up Tom’s artistic process. Through playful explorations and some outright failures, “Nowhere to Now” speaks to the purpose and possibilities of keeping a pocket sketchbook as we see firsthand how Tom’s work progressed over time.</body>
+	</post>
+	<post>
+		<date>April 21, 2023</date>
+		<author>Kella Nicolson</author>
+		<title>Artist Spotlight: James Ulmer</title>
+		<summary>
+			<image_path>painting_2.jpg</image_path>
+			<text>A selection of recent work by Queens, New York-based artist James Ulmer.</text>
+		</summary>
+		<body>Utilizing a simple and universal rudimentary visual vocabulary, Ulmers paintings feature childlike elements—people, animals, still lifes, and landscapes—rendered with sophistication and a minimalist restraint. With a BFA in Illustration and Design from The University of the Arts in Philadelphia, Ulmer has exhibited work both nationally and internationally.</body>
+	</post>
+    <post>
+		<date>April 20, 2023</date>
+		<author>Haley Lu Richardson</author>
+		<title>Artist Spotlight: Anna Degnbol</title>
+		<summary>
+			<image_path>painting_3.jpg</image_path>
+			<text>A selection of recent work by Copenhagen-based illustrator, graphic designer, and comic artist Anna Degnbol</text>
+		</summary>
+		<body>Degnbol is interested in colours, textures, and moods. Inspired by a mix of sci-fi, fantasy worlds, and fashion illustration, her work aims to create “tender and magic moments in time.”</body>
+	</post>
+    <post>
+		<date>April 16, 2023</date>
+		<author>Mikhela Johnson</author>
+		<title>“Entre” by Photographer Desiré van den Berg</title>
+		<summary>
+			<image_path>painting_4.jpg</image_path>
+			<text>A beautiful new photobook from Dutch photographer Desiré van den Berg.</text>
+		</summary>
+		<body>Entre” is a docufiction about the Entrepotbrug, a unique building above the Borneohaven in Amsterdam where van den Berg has lived in recent years. The book not only captures the retro-futuristic character of the serpentine building with its round windows and spiral staircases, it sheds light on the lives behind the outer walls through still lifes and portraits of some of van den Berg’s neighbours. Interspersed with drawings by the architect and notes by van den Berg herself, “Entre” offers a personal portrait of a time and place.</body>
+	</post>
+</blog>
