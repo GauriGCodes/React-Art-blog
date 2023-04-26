@@ -1,8 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
+import Home from "./Home.js";
+import NowhereTONow from "./NowhereTONow.js";
+import Entre from "./Entre.js";
+import JamesUlmer from "./JamesUlmer.js";
+import AnnaDegnbol from "./AnnaDegnbol.js";
+
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/NowhereTONow" element={<NowhereTONow />} />
+        <Route path="/Entre" element={<Entre />} />
+        <Route path="/JamesUlmer" element={<JamesUlmer />} />
+        <Route path="/AnnaDegnbol" element={<AnnaDegnbol />} />
+      </Routes>
+    </Router>
+  );
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
