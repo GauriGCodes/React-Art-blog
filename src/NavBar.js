@@ -12,31 +12,29 @@ class NavBar extends Component {
     }
 
     componentDidMount() {
-        this.loadData()
-        this.interval = setInterval(this.loadData, 60000);
+        this.fetchApiData();
+        this.interval = setInterval(this.fetchApiData(), 10000);
     }
 
-
-    async loadData() {
-        {
-            fetch("https://newsapi.org/v2/everything?q=painting&apiKey=c886c00247d9401ea1abf780a341ad39")
-                .then(res => res.json())
-                .then(
-                    (result) => {
-                        this.setState({
-                            isLoaded: true,
-                            artNewsHeadlines: result.articles
-                        });
-                    },
-                    (error) => {
-                        this.setState({
-                            isLoaded: true,
-                            error
-                        });
-                    }
-                )
-        }
+    fetchApiData = () => {
+        fetch("https://newsapi.org/v2/everything?q=painting&apiKey=")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({
+                        isLoaded: true,
+                        artNewsHeadlines: result.articles
+                    });
+                },
+                (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+                }
+            )
     }
+
 
     componentWillUnmount() {
         clearInterval(this.interval);
