@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+
+.blog-post-body {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto Mono', monospace;
+    flex-direction: column;
+    margin: auto;
+}
+
+#title {
+    font-size: 2rem;
+    text-align: center;
+    margin: 10px;
+}
+
+.image-container {
+    margin: 20px;
+    width: 50%;
+}
+
+img {
+    width: 100%;
+}
