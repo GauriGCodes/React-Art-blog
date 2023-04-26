@@ -13,7 +13,7 @@ class NavBar extends Component {
 
     componentDidMount() {
         this.fetchApiData();
-        this.interval = setInterval(this.fetchApiData(), 10000);
+        this.interval = setInterval(this.fetchApiData(), 1000);
     }
 
     fetchApiData = () => {
