@@ -13,13 +13,10 @@ class NavBar extends Component {
 
     componentDidMount() {
         this.loadData()
-        setInterval(this.loadData, 30000);
+        setInterval(this.loadData, 60000);
     }
     async loadData() {
-
-        this.interval = setInterval(() => this.setState({ time: Date.now() }), 60000);
-	    // Api Keys need to be updated here
-        fetch("https://newsapi.org/v2/everything?q=painting&apiKey=")
+        fetch("https://newsapi.org/v2/everything?q=painting&apiKey=c886c00247d9401ea1abf780a341ad39")
             .then(res => res.json())
             .then(
                 (result) => {
