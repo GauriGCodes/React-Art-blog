@@ -18,7 +18,8 @@ class NavBar extends Component {
     async loadData() {
 
         this.interval = setInterval(() => this.setState({ time: Date.now() }), 60000);
-        fetch("https://newsapi.org/v2/everything?q=painting&apiKey=c886c00247d9401ea1abf780a341ad39")
+	    // Api Keys need to be updated here
+        fetch("https://newsapi.org/v2/everything?q=painting&apiKey=")
             .then(res => res.json())
             .then(
                 (result) => {
