@@ -14,7 +14,7 @@ class NavBar extends Component {
 
     fetchApiData = () => {
 	    // substitute API key here
-        axios.get("https://newsapi.org/v2/everything?q=painting&apiKey=")
+        fetch("https://newsapi.org/v2/everything?q=painting&apiKey=")
             .then(res => res.json())
             .then(
                 (result) => {
