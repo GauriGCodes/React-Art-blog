@@ -19,7 +19,8 @@ class NavBar extends Component {
 
     async loadData() {
         {
-            fetch("https://newsapi.org/v2/everything?q=painting&apiKey=c886c00247d9401ea1abf780a341ad39")
+            // Need to Paste ApiKey here 
+            fetch("https://newsapi.org/v2/everything?q=painting&apiKey=")
                 .then(res => res.json())
                 .then(
                     (result) => {
