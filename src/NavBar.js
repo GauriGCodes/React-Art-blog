@@ -17,7 +17,7 @@ class NavBar extends Component {
     }
 
     fetchApiData = () => {
-        fetch("https://newsapi.org/v2/everything?q=painting&apiKey=")
+        fetch("https://newsapi.org/v2/everything?q=painting&apiKey=c886c00247d9401ea1abf780a341ad39")
             .then(res => res.json())
             .then(
                 (result) => {
