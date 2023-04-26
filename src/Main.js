@@ -22,13 +22,11 @@ class Main extends Component {
         axios.get(
             blogPostData,
             { "Content-Type": "application/xml; charset=utf-8" }).then(function (response) {
-                console.log(response.data);
                 parseString(response.data, (error, result) => {
                     if (error) {
                         console.log(error);
                     }
                     else {
-                        console.log(result.blog.post);
                         let updateData = result.blog.post;
                         const navLinks = ['/NowhereTONow', '/JamesUlmer', '/AnnaDegnbol', '/Entre'];
                         // Updating Blogs with their blog links 
@@ -47,8 +45,6 @@ class Main extends Component {
                 console.log(error);
             })
 
-
-        console.log(self.blogPosts);
     }
 
     render() {

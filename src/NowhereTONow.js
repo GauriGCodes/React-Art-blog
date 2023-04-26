@@ -11,7 +11,7 @@ class NowhereTONow extends Component {
                     Tom DesLongchamp was selected as one of the winners of our 2022 Art & Photo Book Awards! With support from Artmobile, we helped Tom turn 8 years of mark-making into “Nowhere to Now”! If you want the opportunity to publish a book of your own work, you can apply for our 2023 Art & Photo Book Awards here.
 
                     See more from “Nowhere to Now” below!</p>
-                <div className="image-container"><img src="painting_1.jpg"></img></div>
+                <div className="image-container"><img src="painting_1.jpg" alt="painting"></img></div>
             </div>)
     }
 

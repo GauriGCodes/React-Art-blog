@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import './NavBar.css';
+import axios from 'axios';
 
 class NavBar extends Component {
     constructor(props) {
@@ -11,13 +12,9 @@ class NavBar extends Component {
         };
     }
 
-    componentDidMount() {
-        this.fetchApiData();
-        this.interval = setInterval(this.fetchApiData(), 1000);
-    }
-
     fetchApiData = () => {
-        fetch("https://newsapi.org/v2/everything?q=painting&apiKey=c886c00247d9401ea1abf780a341ad39")
+	    // substitute API key here
+        axios.get("https://newsapi.org/v2/everything?q=painting&apiKey=")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -31,8 +28,15 @@ class NavBar extends Component {
                         isLoaded: true,
                         error
                     });
-                }
-            )
+                });
+
+    }
+
+    componentDidMount() {
+        this.fetchApiData();
+        this.interval = setInterval(() => {
+            this.fetchApiData()
+        }, 60000);
     }
 
 
