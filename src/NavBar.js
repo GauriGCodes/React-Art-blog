@@ -16,7 +16,7 @@ class NavBar extends Component {
 
     fetchApiData = () => {
         $.ajax({
-            url: "https://newsapi.org/v2/everything?q=painting&apiKey=c886c00247d9401ea1abf780a341ad39",
+            url: "https://newsapi.org/v2/everything?q=painting&apiKey=",
             type: "GET",
             dataType: "json",
             success: function (response) {
