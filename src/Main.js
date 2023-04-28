@@ -1,11 +1,10 @@
 import './Main.css';
 import React, { Component } from 'react';
-import axios from 'axios';
-import blogPostData from './blog_post.xml'
-import { parseString } from 'xml2js';
+import blogPostData from './blog_post.xml';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import { NavLink } from "react-router-dom";
+import $ from "jquery";
 
 
 class Main extends Component {
@@ -18,32 +17,41 @@ class Main extends Component {
     }
 
     componentDidMount() {
-        var self = this;
-        axios.get(
-            blogPostData,
-            { "Content-Type": "application/xml; charset=utf-8" }).then(function (response) {
-                parseString(response.data, (error, result) => {
-                    if (error) {
-                        console.log(error);
-                    }
-                    else {
-                        let updateData = result.blog.post;
-                        const navLinks = ['/NowhereTONow', '/JamesUlmer', '/AnnaDegnbol', '/Entre'];
-                        // Updating Blogs with their blog links 
-                        for (let i = 0; i < updateData.length; i++) {
-                            updateData[i].link = navLinks[i];
-                        }
-                        self.setState({
-                            blogPosts: updateData
-                        })
-
-                    }
+        $.ajax({
+            type: "GET",
+            url: blogPostData,
+            contentType: "application/xml; charset=utf-8",
+            datatype: "xml",
+            success: function (xml) {
+                let posts = [];
+                $(xml).find("post").each(function () {
+                    let post = {};
+                    post.date = $(this).find('date').text();
+                    post.title = $(this).find('title').text();
+                    post.image_path = $(this).find('image_path').text();
+                    post.text = $(this).find('text').text();
+                    post.body = $(this).find('body').text();
+                    posts.push(post);
                 })
 
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
+                const navLinks = ['/NowhereTONow', '/JamesUlmer', '/AnnaDegnbol', '/Entre'];
+                // Updating Blogs with their blog links
+                for (let i = 0; i < posts.length; i++) {
+                    posts[i].link = navLinks[i];
+                }
+
+                this.setState({
+                    isLoaded: true,
+                    blogPosts: posts
+                });
+            }.bind(this),
+            error: function (e) {
+                this.setState({
+                    isLoaded: true,
+                    error: e
+                })
+            }.bind(this)
+        });
 
     }
 
@@ -62,9 +70,9 @@ class Main extends Component {
                         <Card.Text className="main-content-cards-text">
                             {blog_posts.author}
                         </Card.Text>
-                        <Card.Img variant="top" src={blog_posts.summary[0].image_path} />
+                        <Card.Img variant="top" src={blog_posts.image_path} />
                         <Card.Text>
-                            {blog_posts.summary[0].text}
+                            {blog_posts.text}
                         </Card.Text>
                         <Card.Text>
                             {blog_posts.body}
