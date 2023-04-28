@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './NavBar.css';
-import axios from 'axios';
+import { NavLink } from "react-router-dom";
+import $ from "jquery";
 
 class NavBar extends Component {
     constructor(props) {
@@ -12,32 +13,35 @@ class NavBar extends Component {
         };
     }
 
-    fetchApiData = () => {
-	    // substitute API key here
-        fetch("https://newsapi.org/v2/everything?q=painting&apiKey=")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    this.setState({
-                        isLoaded: true,
-                        artNewsHeadlines: result.articles
-                    });
-                },
-                (error) => {
-                    this.setState({
-                        isLoaded: true,
-                        error
-                    });
-                });
 
+    fetchApiData = () => {
+        $.ajax({
+            url: "https://newsapi.org/v2/everything?q=painting&apiKey=c886c00247d9401ea1abf780a341ad39",
+            type: "GET",
+            dataType: "json",
+            success: function (response) {
+                this.setState({
+                    isLoaded: true,
+                    artNewsHeadlines: response.articles
+                });
+            }.bind(this),
+            error: function (e) {
+                this.setState({
+                    isLoaded: true,
+                    error: e
+                })
+            }.bind(this)
+        });
     }
+
 
     componentDidMount() {
         this.fetchApiData();
         this.interval = setInterval(() => {
             this.fetchApiData()
         }, 60000);
-    }
+
+    };
 
 
     componentWillUnmount() {
@@ -54,6 +58,7 @@ class NavBar extends Component {
         } else {
             return (
                 <div className="artHeadline">
+                    <NavLink to="/"><h1>Home</h1></NavLink>
                     <h1>Latest in the Art World</h1>
                     <ol>
                         {artNewsHeadlines.map(article => (

@@ -14,12 +14,13 @@
     "bootstrap": "^5.2.3",
     "buffer": "^6.0.3",
     "fs": "0.0.1-security",
+    "jquery": "^3.6.4",
     "material-ui": "^0.20.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "react-xml-parser": "^1.1.8",
     "stream-browserify": "^3.0.0",
     "timers-browserify": "^2.0.12",
@@ -35,6 +36,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
+    "globals": {
+      "window": true,
+      "ActiveXObject": true
+    },
     "extends": [
       "react-app",
       "react-app/jest"
