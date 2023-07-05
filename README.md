@@ -1,5 +1,5 @@
 # Art-blog
-Assignment - 4 , Single Page React Application
+Single Page React Application
 
 To Start the application follow the below mentioned steps
 
