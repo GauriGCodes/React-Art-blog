@@ -1,0 +1,53 @@
+pipeline{
+  agent any
+  tools{
+    nodejs '16.0.0'
+  }
+
+  environment {
+    DEPLOY_DIR = '/var/www/html' 
+  }
+
+  stages{
+     stage('Checkout') {
+            steps {
+                git 'https://github.com/your-username/your-react-app.git'
+            }
+     }
+        
+     stage('Install Dependencies') {
+            steps {
+                // Install Node.js dependencies
+                sh 'npm install'
+            }
+     }
+        
+     stage('Build') {
+            steps {
+                // Build React app
+                sh 'npm run build'
+            }
+     }
+        
+     stage('Deploy') {
+            steps {
+                // Deploy built artifacts to deployment directory
+                sh 'rm -rf ${DEPLOY_DIR}/*' // Clear existing files
+                sh 'cp -r build/* ${DEPLOY_DIR}'
+            }
+      }
+    }
+
+ }
+    
+ post {
+   success {
+            // Notify on success
+            echo 'React app successfully built and deployed.'
+    }
+    failure {
+            // Notify on failure
+            echo 'Failed to build or deploy React app.'
+    }
+    }
+}
