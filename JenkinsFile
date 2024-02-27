@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-username/your-react-app.git'
+                git 'https://github.com/GauriGCodes/React-Art-blog.git'
             }
         }
         
